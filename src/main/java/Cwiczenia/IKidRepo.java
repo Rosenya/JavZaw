@@ -1,4 +1,4 @@
-package Wyjatki.Cwiczenia;
+package Cwiczenia;
 
 public interface IKidRepo {
 

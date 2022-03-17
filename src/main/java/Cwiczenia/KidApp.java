@@ -1,4 +1,4 @@
-package Wyjatki.Cwiczenia;
+package Cwiczenia;
 
 public class KidApp {
     public static void main(String[] args) {

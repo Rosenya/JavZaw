@@ -1,4 +1,4 @@
-package Wyjatki.Cwiczenia;
+package Cwiczenia;
 
 public class Kid implements Comparable<Kid>{
 

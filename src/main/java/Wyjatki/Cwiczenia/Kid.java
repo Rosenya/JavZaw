@@ -61,3 +61,4 @@ public class Kid implements Comparable<Kid>{
         return Integer.compare(this.getHeigth(), o.getHeigth());
     }
 }
+

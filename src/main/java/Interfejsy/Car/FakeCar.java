@@ -1,4 +1,4 @@
-package Interfejsy;
+package Interfejsy.Car;
 
 public class FakeCar implements ICar {
 

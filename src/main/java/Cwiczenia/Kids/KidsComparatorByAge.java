@@ -1,4 +1,4 @@
-package Cwiczenia;
+package Cwiczenia.Kids;
 
 import java.util.Comparator;
 

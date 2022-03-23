@@ -1,4 +1,4 @@
-package Cwiczenia;
+package Cwiczenia.Kids;
 
 public class KidApp {
     public static void main(String[] args) {

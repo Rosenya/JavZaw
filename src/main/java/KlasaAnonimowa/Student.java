@@ -1,49 +1,62 @@
-package porownania;
+package KlasaAnonimowa;
 
-public class Student implements Comparable<Student> {
+import java.util.Objects;
+
+public class Student {
 
     private String name;
-    private int age;
+    private String pesel;
+    private int indexNumber;
 
-    public Student(String name, int age) {
+    public Student(String name, String pesel, int indexNumber) {
         this.name = name;
-        this.age = age;
+        this.pesel = pesel;
+        this.indexNumber = indexNumber;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getPesel() {
+        return pesel;
+    }
+
+    public int getIndexNumber() {
+        return indexNumber;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setIndexNumber(int indexNumber) {
+        this.indexNumber = indexNumber;
     }
 
     @Override
-    public int compareTo(Student o) { //kolejnosc naturalna
-//        return o.getName().compareTo(this.getName()); //sortowanie po imieniu ale odwrotnie
-//        return Integer.compare(o.getAge(), this.getAge());
-//        return Integer.compare(this.age, o.age);
-//        return Integer.compare(this.getName().length(), o.getName().length());
-        int compareResult = this.getName().compareTo(o.getName()); //sortowanie po imieniu
-        if (compareResult == 0) {
-            return Integer.compare(this.getAge(), o.getAge());
-        }
-        return compareResult;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return indexNumber == student.indexNumber && Objects.equals(name, student.name) && Objects.equals(pesel, student.pesel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, pesel, indexNumber);
     }
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ",pesel='" + pesel + '\'' +
+                ",index=" + indexNumber +
                 '}';
     }
 }

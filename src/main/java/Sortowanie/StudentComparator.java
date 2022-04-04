@@ -1,3 +1,7 @@
+package Sortowanie;
+
+import Sortowanie.Student;
+
 import java.util.Comparator;
 
 //w nawiasie diamentowym <Student> umieszczam informacje ktorej klasy tworze Comparator

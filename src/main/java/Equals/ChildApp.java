@@ -1,3 +1,5 @@
+package Equals;
+
 public class ChildApp {
 
     public static void main(String[] args) {

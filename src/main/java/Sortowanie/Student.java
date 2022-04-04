@@ -1,62 +1,49 @@
 package Sortowanie;
 
-import java.util.Objects;
-
-public class Student {
+public class Student implements Comparable<Student> {
 
     private String name;
-    private String pesel;
-    private int indexNumber;
+    private int age;
 
-    public Student(String name, String pesel, int indexNumber) {
+    public Student(String name, int age) {
         this.name = name;
-        this.pesel = pesel;
-        this.indexNumber = indexNumber;
+        this.age = age;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getPesel() {
-        return pesel;
-    }
-
-    public int getIndexNumber() {
-        return indexNumber;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
+    public int getAge() {
+        return age;
     }
 
-    public void setIndexNumber(int indexNumber) {
-        this.indexNumber = indexNumber;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return indexNumber == student.indexNumber && Objects.equals(name, student.name) && Objects.equals(pesel, student.pesel);
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, pesel, indexNumber);
+    public int compareTo(Student o) { //kolejnosc naturalna
+//        return o.getName().compareTo(this.getName()); //sortowanie po imieniu ale odwrotnie
+//        return Integer.compare(o.getAge(), this.getAge());
+//        return Integer.compare(this.age, o.age);
+//        return Integer.compare(this.getName().length(), o.getName().length());
+        int compareResult = this.getName().compareTo(o.getName()); //sortowanie po imieniu
+        if (compareResult == 0) {
+            return Integer.compare(this.getAge(), o.getAge());
+        }
+        return compareResult;
     }
 
     @Override
     public String toString() {
-        return "{" +
+        return "Student{" +
                 "name='" + name + '\'' +
-                ",pesel='" + pesel + '\'' +
-                ",index=" + indexNumber +
+                ", age=" + age +
                 '}';
     }
 }
